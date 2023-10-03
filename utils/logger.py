@@ -53,9 +53,11 @@ def setup_logger(work_dir=None, logfile_name='log.txt', logger_name='logger'):
     return logger
 
   if os.path.exists(work_dir):
-    raise SystemExit(f'Work directory `{work_dir}` has already existed!\n'
-                     f'Please specify another one.')
-  os.makedirs(work_dir)
+    pass
+    # raise SystemExit(f'Work directory `{work_dir}` has already existed!\n'
+    #                  f'Please specify another one.')
+  else:
+    os.makedirs(work_dir)
 
   # Save log message with all levels in log file.
   fh = logging.FileHandler(os.path.join(work_dir, logfile_name))
